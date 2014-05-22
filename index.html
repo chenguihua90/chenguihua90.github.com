@@ -1,74 +1,314 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="utf-8">
+		<title>花爷的简历</title>
+		<style type="text/css">
+			body{
+				margin: 20px auto 20px auto;
+				width: 800px;
+				background-image: url(bg.png);
+			}
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Chenguihua90.github.com : My online resume" />
+			div{
+				position: relative;
+			}
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+			.left{
+				float: left;
+			}
 
-    <title>Chenguihua90.github.com</title>
-  </head>
+			.right{
+				float: right;
+			}
 
-  <body>
+			#myinfo{
+				height: 75px;
+				text-align: right;
+				border-bottom: 1px solid #9A9A9A;
+			}
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/chenguihua90">View on GitHub</a>
+			#name{
+				font-size: 30px;
+			}
 
-          <h1 id="project_title">Chenguihua90.github.com</h1>
-          <h2 id="project_tagline">My online resume</h2>
+			#contact{
+				margin-top: 10px;
+			}
 
-        </header>
-    </div>
+			#email{
+				margin-left: 20px;
+			}
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+			#Educational, #Skill, #Project, #Other, #Honor{
+				margin-top: 20px;
+				padding-bottom: 10px;
+				border-bottom: 1px solid #9A9A9A;
+			}
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+			#Character{
+				margin-top: 20px;
+				padding-bottom: 10px;
+			}
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+			.project-box{
+				padding-bottom: 10px;
+				border-bottom: 1px dotted #9A9A9A;
+			}
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+			#Project{
+				padding-bottom: 20px;
+			}
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+			.title{
+				font-size: 25px;
+				text-indent: 25px;
+			}
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+			.title>small{
+				position: absolute;
+				top: 50%;
+				left: -25px;
+				margin-top: -6px;
+				width: 12px;
+				font-size: 12px;
+				line-height: 12px;
+			}
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+			.info{
+				margin-top: 10px;
+				text-indent: 55px;
+				line-height: 20px;
+			}
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+			.info>small{
+				position: absolute;
+				top: 9px;
+				left: -25px;
+				margin-top: -4px;
+				width: 12px;
+				font-size: 8px;
+				line-height: 8px;
+			}
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+			.info2{
+				margin-top: 10px;
+				text-indent: 85px;
+			}
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+			.info2>small{
+				position: absolute;
+				top: 50%;
+				left: -25px;
+				margin-top: -4px;
+				width: 12px;
+				font-size: 8px;
+				line-height: 8px;
+			}
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+			.normal{
+				margin-top: 10px;
+				text-indent: 35px;
+			}
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
+			.normal2{
+				margin: 10px 0 0 35px;
+				text-indent: 35px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+			}
+		</script>
+	</head>
+	<body>
+		<div id="myinfo">
+			<div id="name">
+				陈贵华
+			</div>
+			<div id="contact">
+				<div id="email" class="right">邮箱：<a style="text-decoration: none;" href="mailto:chenguihua90@gmail.com">chenguihua90@gmail.com</a></div>
+				<div id="phone" class="right">联系方式：15072373723</div>
+			</div>
+		</div>
+		<div id="Educational">
+			<div class="title">
+				<small>■</small>教育背景
+			</div>
+			<div class="info">
+				<small>◆</small>华中科技大学，电子与工程系，硕士（保送）  2013.09  -  今
+			</div>
+			<div class="info">
+				<small>◆</small>华中科技大学，电子与工程系，学士  	2009.09  -  2013.9
+			</div>
+			<div class="info2">
+				<small>◆</small>大一、大二 软件学院07班
+			</div>
+			<div class="info2">
+				<small>◆</small>大三、大四 电信系基于项目信息类专业教育实验班
+			</div>
+		</div>
+		<div id="Skill">
+			<div class="title">
+				<small>■</small>工作技能
+			</div>
+			<div class="info">
+				<small>◆</small>熟练使用C语言，有3年C语言开发经验
+			</div>
+			<div class="info">
+				<small>◆</small>熟悉Linux平台应用、开发和调试，有近3年Linux平台开发经验
+			</div>
+			<div class="info">
+				<small>◆</small>熟悉TCP/IP基本原理，熟悉EPOLL等基本知识
+			</div>
+			<div class="info">
+				<small>◆</small>具有良好的分析与解决问题的能力和热情
+			</div>
+			<div class="info">
+				<small>◆</small>具有良好的表达和沟通能力，良好的团结协作精神
+			</div>
+		</div>
+		<div id="Project">
+			<div class="title">
+				<small>■</small>项目经历
+			</div>
+			<div class="normal">20012年5月至今，参与开发项目规模超过100K，个人代码（NBNC）超过20K。</div>
+			<div class="normal"><strong>应用软件特征分析开发项目（2013/12 ~今）</strong></div>
+			<div class="project-box">
+				<div class="info">
+					<small>◆</small>项目描述：
+				</div>
+				<div class="normal2">利用wireshark等工具分析应用软件交互流特征，提取固定字符及相应正则表达式。采用AC算法对报文进行特征的识别，实现对数据流的阻断和限速。</div>
+				<div class="info">
+					<small>◆</small>个人工作
+				</div>
+				<div class="normal2">对即时通讯软件及流媒体应用软件的特征提取；</div>
+				<div class="normal2">学习了解AC算法；</div>
+				<div class="info">
+					<small>◆</small>关键技术：正则表达式、AC算法、TCP/UDP
+				</div>
+			</div>
+			
+			<div class="normal"><strong>CWMP（广域网用户端设备管理协议）开发项目（2012/06 ~2013/08）</strong></div>
+			<div class="project-box">
+				<div class="info">
+					<small>◆</small>项目描述：
+				</div>
+				<div class="normal2">在用户侧设备（Linux系统）实现CWMP协议，开发语言C语言，开发流程CMM。采用Epoll+多线程调度模型，通过对动态配置树的操作，实现服务器对CPE设备的配置管理、系统自动升级及状态和性能的监控。</div>
+				<div class="info">
+					<small>◆</small>个人工作
+				</div>
+				<div class="normal2">以组长的身份管理项目与进度，已经负责和甲方经理沟通；</div>
+				<div class="normal2">负责配主体调度框架的设计实现、以及配置管理和插件模块的实现；</div>
+				<div class="normal2">赴甲方公司参与项目测试、bug修复和验收准备工作；</div>
+				<div class="info">
+					<small>◆</small>关键技术：EPOLL、多线程、ISSU
+				</div>
+			</div>
 
-    
+			<div class="normal"><strong>Linux内核裁剪（2012/06 ~2012/07）</strong></div>
+			<div class="project-box">
+				<div class="info">
+					<small>◆</small>项目描述：
+				</div>
+				<div class="normal2">实现CentOS内核裁剪，达到内核文件<3M，initrd.img < 24M，以及U盘启动</div>
+				<div class="info">
+					<small>◆</small>个人工作
+				</div>
+				<div class="normal2">单独完成Linux内核裁剪</div>
+				<div class="info">
+					<small>◆</small>关键技术：Linux、initrd
+				</div>
+			</div>
 
-  </body>
+			<div class="normal"><strong>NQA（网络质量分析）二期开发项目（2011/11 ~2012/06）</strong></div>
+			<div class="project-box">
+				<div class="info">
+					<small>◆</small>项目描述：
+				</div>
+				<div class="normal2">在一期的两种测试方法(ICMP Echo 和 UDP Echo)的基础上增加TCP/DHCP/DNS//FTP等 多种测试类型，支持 MIB 和 NQA服务器功能，优化主框架调度流程及插件调度方式。</div>
+				<div class="info">
+					<small>◆</small>个人工作
+				</div>
+				<div class="normal2">以核心骨干身份参与NQA二期开发项目的整改方案设计；</div>
+				<div class="normal2">负责插件模块的设计和实现工作（分析DHCP/FTP等协议建立过程的时延、抖动触发联动）；</div>
+				<div class="normal2">赴甲方公司参与项目测试、bug修复和验收准备工作；</div>
+				<div class="info">
+					<small>◆</small>关键技术：NQA、DBM、TCP/DHCP
+				</div>
+			</div>
+			
+			<div class="normal"><strong>NQA（网络质量分析）一期开发项目（2011/05 ~2011/11）</strong></div>
+			<div class="project-box">
+				<div class="info">
+					<small>◆</small>项目描述：
+				</div>
+				<div class="normal2">通过响应时间、网络抖动、丢包率等网络信息，对网络性能或服务质量进行分析，为用户提供网络性能参数。NQA一期主要实现的是 ICMP-echo 和 UDP Echo协议，实时监控网络状态的变化，并提供与 Track 和应用模块联动的功能。</div>
+				<div class="info">
+					<small>◆</small>个人工作
+				</div>
+				<div class="normal2">负责插件 （ICMP-echo和 UDP-echo）的设计与实现，涉及统计、历史、track 以及 trap 插件模块的处理、配置的保存以及定时器模块的实现；</div>
+				<div class="normal2">赴甲方公司参与项目测试、bug修复和验收准备工作；</div>
+				<div class="info">
+					<small>◆</small>关键技术：NQA、IPC、RTT、ICMP
+				</div>
+			</div>
+			
+			<div class="normal"><strong>视频监控开发项目（2011/02 ~2011/05）</strong></div>
+			<div class="project-box-last">
+				<div class="info">
+					<small>◆</small>项目描述：
+				</div>
+				<div class="normal2">在MFC平台上实现对于摄像头的控制，以及对视频资料的传输与存储。</div>
+				<div class="info">
+					<small>◆</small>个人工作
+				</div>
+				<div class="normal2">实现多路视频监控系统的调度框架以及摄像头控制协议的设计与实现。</div>
+			</div>
+			
+		</div>
+		<div id="Other">
+			<div class="title">
+				<small>■</small>其它实践
+			</div>
+			<div class="info">
+				<small>◆</small>2013/03-2014/03 华中科技大学技术团队Dian团队队长。本人在团队中参与了多个项目，从普通组员到核心骨干到项目组长，积累了丰富的项目技术经验和管理经验。
+			</div>
+			<div class="info">
+				<small>◆</small>2013/09-2014/01 华中科技大学电信本科生班主任。
+			</div>
+			<div class="info">
+				<small>◆</small>2010/03-2012/09 担任基于项目信息类专业教育实验班班长。
+			</div>
+			<div class="info">
+				<small>◆</small>2010/04-2012/05 参与深圳易思博软件技术有限公司的软件Demo开发。
+			</div>
+		</div>
+		<div id="Honor">
+			<div class="title">
+				<small>■</small>相关荣誉
+			</div>
+			<div class="info">
+				<small>◆</small>“2013年度Dian团队优秀项目组组长”（2/8，Dian团队为导师带领的科研团队）
+			</div>
+			<div class="info">
+				<small>◆</small>“2012年度Dian团队优秀个人”（2/150）
+			</div>
+			<div class="info">
+				<small>◆</small>20011年院系编程大赛二等奖
+			</div>
+			<div class="info">
+				<small>◆</small>本科期间曾获校优秀团员，优秀班干部，自强奖学金等荣誉
+			</div>
+		</div>
+		<div id="Character">
+			<div class="title">
+				<small>■</small>性格特征
+			</div>
+			<div class="info">
+				<small>◆</small>勤于思考、踏实肯干
+			</div>
+		</div>
+	</body>
 </html>
